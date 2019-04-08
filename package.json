@@ -28,11 +28,8 @@
   "devDependencies": {},
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/A-Mallik/temporary_project_2.git"
+    "url": "git+https://github.com/ismumchow/Untangled.git"
   },
-  "bugs": {
-    "url": "https://github.com/A-Mallik/temporary_project_2/issues"
-  },
-  "homepage": "https://github.com/A-Mallik/temporary_project_2#readme",
+  "homepage": "https://github.com/ismumchow/Untangled.git#readme",
   "description": ""
 }
