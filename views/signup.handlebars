@@ -1,0 +1,76 @@
+<div id="signup_background" style="">
+        <div class="container">
+                <img id="logoSignup" src ='images/logo.png'/>
+            <div class="row">
+                <div class="col-md">
+                    <form id="signup" name="signup" method="post" action="/signup">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Email address</label>
+                            <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                        </div>
+                        <div class="form-group" >
+                            <label for="firstname" >First Name</label>
+                            <input type="text" id="firstName" name="firstname" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="lastname">Last Name</label>
+                            <input type="text" id="lastName" name="lastname" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="username">Username</label>
+                            <input type="text" name="username" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Password</label>
+                            <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                        </div>
+                        <button type="submit" class="btn btn-primary" onclick="handleAuthorFormSubmit()"  >Sign Up</button>
+                        <hr>
+                        <p>Already have an account? <a class="index-link" style="text-decoration:none" href="/signin">&nbsp&nbsp<button type="button" class="btn btn-success" >  Log In</button></a></p>
+                        	
+                       
+                        {{!-- <button type="submit" class="btn btn-success" href="/"  > Go Back </button> --}}
+                    {{!-- onclick="handleAuthorFormSubmit()" --}}
+                    </form>
+                </div>
+            </div>
+        </div>
+</div>
+<script>
+     //  ==========Trying This======================
+         
+            
+          
+           
+         
+            
+            
+            // Getting the initial list of Authors
+          
+            function handleAuthorFormSubmit(event) {
+               
+            var nameInput = $("#firstName").val().trim() + " " + $("#lastName").val().trim();
+              
+              // if (!nameInput.val().trim().trim()) {
+              //   return;
+              // }
+              upsertAuthor({
+                name: nameInput
+                  
+              });
+            }
+          
+                                function upsertAuthor(authorData) {
+                            $.post("/api/authors", authorData)
+                            
+                        }
+
+           
+            // Function for retrieving authors and getting them ready to be rendered to the page
+            
+          
+          // }
+          // });
+                        //  ==========Trying This======================
+</script>
+<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>

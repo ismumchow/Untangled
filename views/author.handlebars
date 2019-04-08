@@ -1,0 +1,54 @@
+<div class="effects">
+	<button type="button" class="btn btn-primary" ><a href="/">Home</a></button>
+	<div class="container">
+		<div class="row mt-4">
+      <div class="col-md-2 col-sm-2">
+        <a class="btn btn-light offset newpost" id="blogButton" href="/blog-html">Go to Posts</a>
+      </div>
+			<div class="col-md-2 col-sm-2">
+        <a class="btn btn-light offset newpost" id="newPostButton" href="/cms-html">New Post</a>
+      </div>
+    </div>
+		<div class="row">
+			<div class="col-md-12 ">
+				<div class="author-container">
+					<h2 style="color:white;">Authors</h2>
+					<table class="table table-striped">
+						<thead>
+						<!-- --- -->
+						</thead>
+						<tbody>
+							<tr id="form-row">
+								<form id="author-form">
+									<td colspan="4">
+										<div id="author-name" style="visibility: hidden" type="text"></div>
+										{{!-- <div id="test" ></div> --}}
+									</td>
+									<td><button type="submit" class="btn btn-success">Join</button>
+									</td>
+								</form>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+
+		<script src="js/author.js" type="text/javascript"></script>
+		<script>
+			    var nameGottenFromApi;
+  $.ajax({
+    url: "/api/users",
+    type: 'GET',
+    success: function(res) {
+       nameGottenFromApi = res.firstname + " " + res.lastname;
+      console.log(nameGottenFromApi)
+			document.querySelector("#test").innerHTML = nameGottenFromApi;
+    }
+});
+document.querySelector("#test").innerHTML = nameGottenFromApi;
+console.log("my data: " + document.querySelector("#test").innerHTML)
+console.log(nameGottenFromApi)
+		</script>
+</div>
